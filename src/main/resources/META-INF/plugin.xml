@@ -1,19 +1,23 @@
 <idea-plugin>
-    <id>com.github.yusufugurozbek.testcontainersportupdater</id>
-    <name>test-containers-port-updater</name>
-    <vendor>yusufugurozbek</vendor>
+    <id>com.github.yusufugurozbek.testcontainers.port.updater</id>
+    <name>Testcontainers Port Updater</name>
+    <vendor>Yusuf Ugur ÖZBEK</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.database</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.yusufugurozbek.testcontainersportupdater.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.yusufugurozbek.testcontainersportupdater.services.MyProjectService"/>
+        <projectService
+                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuService"/>
+        <projectService
+                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuLogChecker"
+                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuLogCheckerImpl"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.yusufugurozbek.testcontainersportupdater.listeners.MyProjectManagerListener"
+        <listener class="com.github.yusufugurozbek.testcontainers.port.updater.TpuManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

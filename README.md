@@ -1,38 +1,41 @@
-# test-containers-port-updater
+# Testcontainers Port Updater
 
-![Build](https://github.com/yusufugurozbek/test-containers-port-updater/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
+![Build](https://github.com/yusufugurozbek/testcontainers-port-updater/workflows/Build/badge.svg)
+[![Version](https://img.shields.io/jetbrains/plugin/v/17116-testcontainers-port-updater.svg)](https://plugins.jetbrains.com/plugin/17116-testcontainers-port-updater)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/17116-testcontainers-port-updater.svg)](https://plugins.jetbrains.com/plugin/17116-testcontainers-port-updater)
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+This simple plugin aims to update the IntelliJ data source port number with the exposed random port number since Testcontainers expose the port randomly.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
-
-To keep everything working, do not remove `<!-- ... -->` sections. 
+If you don't know what is Testcontainers, please check their official web page https://www.testcontainers.org/
 <!-- Plugin description end -->
 
 ## Installation
 
 - Using IDE built-in plugin system:
   
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "test-containers-port-updater"</kbd> >
+  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Testcontainers Port Updater"</kbd> >
   <kbd>Install Plugin</kbd>
   
 - Manually:
 
-  Download the [latest release](https://github.com/yusufugurozbek/test-containers-port-updater/releases/latest) and install it manually using
+  Download the [latest release](https://github.com/yusufugurozbek/testcontainers-port-updater/releases/latest) and install it manually using
   <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## Usage
+
+For having a working plugin there are 2 requirements;
+
+1- The plugin expects that Testcontainers writes a log that starts with ` Database: `. If you don't see any logs on your console, please check your Testcontainers configurations and your log level.
+
+Example log; 
+```
+2021-06-23 14:07:26.408  INFO [your-service,,] 11111 --- [           main] o.f.c.i.database.base.DatabaseType       : Database: jdbc:postgresql://localhost:12345/test (PostgreSQL 10.13)
+```
+
+2- You need to add a new data source into your IntelliJ. For more details, please visit [this page](https://www.jetbrains.com/help/idea/connecting-to-a-database.html) from IntelliJ.
+
+After covering these 2 requirements, the plugin automatically will catch the log and update the matched data source URL with the Testcontainers' one.
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
