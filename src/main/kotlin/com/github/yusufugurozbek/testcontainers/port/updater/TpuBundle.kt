@@ -1,13 +1,13 @@
-package com.github.yusufugurozbek.testcontainersportupdater
+package com.github.yusufugurozbek.testcontainers.port.updater
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
 import org.jetbrains.annotations.PropertyKey
 
 @NonNls
-private const val BUNDLE = "messages.MyBundle"
+private const val BUNDLE = "messages.TpuBundle"
 
-object MyBundle : AbstractBundle(BUNDLE) {
+object TpuBundle : AbstractBundle(BUNDLE) {
 
     @Suppress("SpreadOperator")
     @JvmStatic
