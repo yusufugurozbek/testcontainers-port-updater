@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# test-containers-port-updater Changelog
+# testcontainers-port-updater Changelog
 
 ## [Unreleased]
 ### Added

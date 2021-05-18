@@ -1,1 +1,1 @@
-rootProject.name = "test-containers-port-updater"
+rootProject.name = "testcontainers-port-updater"
