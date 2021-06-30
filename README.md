@@ -5,7 +5,10 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/17116-testcontainers-port-updater.svg)](https://plugins.jetbrains.com/plugin/17116-testcontainers-port-updater)
 
 <!-- Plugin description -->
-This simple plugin aims to update the IntelliJ data source port number with the exposed random port number since Testcontainers expose the port randomly.
+You are using Testcontainers and want to have your Testcontainers database accessible directly within IntelliJ? You are tired of changing the port configuration all the time since Testcontainers chooses a random port on each startup? This plugin solves your issue.
+
+
+It automatically updates the IntelliJ data source port number with the exposed random port number that Testcontainers chose on startup.
 
 If you don't know what is Testcontainers, please check their official web page https://www.testcontainers.org/
 <!-- Plugin description end -->

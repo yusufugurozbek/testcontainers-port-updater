@@ -3,6 +3,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+### Updated
+- Update README.md
 ## [0.0.2]
 ### Added
-- The plugin is created.
+- Create the plugin
