@@ -21,6 +21,7 @@ plugins {
 
 group = properties("pluginGroup")
 version = properties("pluginVersion")
+val javaVersion = properties("javaVersion")
 
 // Configure project's dependencies
 repositories {
@@ -66,15 +67,15 @@ detekt {
 tasks {
     // Set the compatibility versions to 1.8
     withType<JavaCompile> {
-        sourceCompatibility = "1.8"
-        targetCompatibility = "1.8"
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = javaVersion
     }
 
     withType<Detekt> {
-        jvmTarget = "1.8"
+        jvmTarget = javaVersion
     }
 
     patchPluginXml {
