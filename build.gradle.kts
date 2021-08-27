@@ -8,26 +8,27 @@ plugins {
     // Java support
     id("java")
     // Kotlin support
-    id("org.jetbrains.kotlin.jvm") version "1.5.20"
+    id("org.jetbrains.kotlin.jvm") version "1.5.30"
     // gradle-intellij-plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
-    id("org.jetbrains.intellij") version "1.0"
+    id("org.jetbrains.intellij") version "1.1.4"
     // gradle-changelog-plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
-    id("org.jetbrains.changelog") version "1.1.2"
+    id("org.jetbrains.changelog") version "1.3.0"
     // detekt linter - read more: https://detekt.github.io/detekt/gradle.html
-    id("io.gitlab.arturbosch.detekt") version "1.17.1"
+    id("io.gitlab.arturbosch.detekt") version "1.18.0"
     // ktlint linter - read more: https://github.com/JLLeitschuh/ktlint-gradle
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
 }
 
 group = properties("pluginGroup")
 version = properties("pluginVersion")
+val javaVersion = properties("javaVersion")
 
 // Configure project's dependencies
 repositories {
     mavenCentral()
 }
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.18.0")
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -46,8 +47,8 @@ intellij {
 // Configure gradle-changelog-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-    version = properties("pluginVersion")
-    groups = emptyList()
+    version.set(properties("pluginVersion"))
+    groups.set(emptyList())
 }
 
 // Configure detekt plugin.
@@ -64,17 +65,17 @@ detekt {
 }
 
 tasks {
-    // Set the compatibility versions to 1.8
+    // Set the compatibility versions to 11
     withType<JavaCompile> {
-        sourceCompatibility = "1.8"
-        targetCompatibility = "1.8"
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = javaVersion
     }
 
     withType<Detekt> {
-        jvmTarget = "1.8"
+        jvmTarget = javaVersion
     }
 
     patchPluginXml {
