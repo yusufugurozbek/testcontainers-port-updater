@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Update Java version to 11
+- Bump dependencies to their latest versions
 ## [0.0.3]
 ### Updated
 - Update README.md
