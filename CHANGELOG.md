@@ -1,8 +1,7 @@
-<!-- Keep a Changelog guide -> https://keepachangelog.com -->
-
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Update Java version to 11
 ## [0.0.3]
 ### Updated
 - Update README.md
