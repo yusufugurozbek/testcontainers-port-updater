@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Fix 2 deprecated API usages
 
 ## [0.0.4]
 - Update Java version to 11
