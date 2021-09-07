@@ -1,6 +1,7 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
 
 ## [0.0.4]
 - Update Java version to 11
