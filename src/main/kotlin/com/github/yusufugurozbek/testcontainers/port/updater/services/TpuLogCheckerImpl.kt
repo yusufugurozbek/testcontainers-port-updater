@@ -9,7 +9,6 @@ import com.intellij.execution.process.ProcessEvent
 import com.intellij.execution.process.ProcessOutputTypes
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Key
-import org.jetbrains.annotations.Nullable
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
@@ -36,18 +35,18 @@ class TpuLogCheckerImpl(var project: Project) : TpuLogChecker {
             val loggedDataSourceUrlWithPortPlaceholder = getDataSourceUrlWithPortPlaceholder(loggedDataSourceUrl)
 
             DbPsiFacade.getInstance(project).dataSources.forEach { dataSource ->
-                val localDataSource = DbImplUtil.getMaybeLocalDataSource(dataSource)
+                val localDataSource = DbImplUtil.getMaybeLocalDataSource(dataSource) ?: return@forEach
                 if (hasDataSourceSameUrl(localDataSource, loggedDataSourceUrlWithPortPlaceholder)) {
-                    TpuNotifier.notify(project, "Old data source URL: ${localDataSource?.url}")
-                    localDataSource?.url = loggedDataSourceUrl
+                    TpuNotifier.notify(project, "Old data source URL: ${localDataSource.url}")
+                    localDataSource.url = loggedDataSourceUrl
                     TpuNotifier.notify(project, "Updated data source URL: $loggedDataSourceUrl")
                 }
             }
         }
     }
 
-    private fun hasDataSourceSameUrl(dataSource: @Nullable LocalDataSource?, dataSourceUrlWithPortPlaceholder: String) =
-        getDataSourceUrlWithPortPlaceholder(dataSource?.url!!) == dataSourceUrlWithPortPlaceholder
+    private fun hasDataSourceSameUrl(dataSource: LocalDataSource, dataSourceUrlWithPortPlaceholder: String) =
+        dataSource.url?.let(::getDataSourceUrlWithPortPlaceholder) == dataSourceUrlWithPortPlaceholder
 
     private fun getDataSourceUrlWithPortPlaceholder(dataSourceUrl: String) =
         dataSourceUrl.replace(portRegex, portPlaceholder)
