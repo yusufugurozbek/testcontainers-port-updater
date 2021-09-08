@@ -3,6 +3,7 @@
 ## [Unreleased]
 - Bump dependencies to their latest versions
 - Fix 2 deprecated API usages
+- Stop support for version 202.8194.7 (2020.2.4)
 
 ## [0.0.4]
 - Update Java version to 11
