@@ -12,8 +12,8 @@
         <projectService
                 serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuService"/>
         <projectService
-                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuLogChecker"
-                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuLogCheckerImpl"/>
+                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuDatasourceUpdater"
+                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuDatasourceUpdaterImpl"/>
         <notificationGroup id="Testcontainers Port Updater" displayType="BALLOON"/>
     </extensions>
 
