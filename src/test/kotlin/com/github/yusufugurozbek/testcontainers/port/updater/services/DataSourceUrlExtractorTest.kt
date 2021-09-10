@@ -7,15 +7,15 @@ import org.junit.jupiter.api.Test
 
 internal class DataSourceUrlExtractorTest {
 
-   private val sut = DataSourceUrlExtractor()
+    private val sut = DataSourceUrlExtractor()
 
-   @Test
-   fun `extractDataSourceUrl successfullyExtractsUrlIfPresent`() {
-      assertEquals(sut.extractDataSourceUrl(LOG_ENTRY), DATASOURCE_URL)
-   }
+    @Test
+    fun `extractDataSourceUrl successfullyExtractsUrlIfPresent`() {
+        assertEquals(sut.extractDataSourceUrl(LOG_ENTRY), DATASOURCE_URL)
+    }
 
-   @Test
-   fun `extractDataSourceUrl returnsNullIfNotFound`() {
-      assertEquals(sut.extractDataSourceUrl("someGibberish"), null)
-   }
+    @Test
+    fun `extractDataSourceUrl returnsNullIfNotFound`() {
+        assertEquals(sut.extractDataSourceUrl("someGibberish"), null)
+    }
 }

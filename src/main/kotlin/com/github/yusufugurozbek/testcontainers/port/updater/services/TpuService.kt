@@ -12,23 +12,23 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.Key
 
 class TpuService(project: Project) {
-   init {
-      val datasourceUpdater = project.service<TpuDatasourceUpdater>()
-      project.messageBus.connect().subscribe(ExecutionManager.EXECUTION_TOPIC, executionListener(datasourceUpdater))
-   }
+    init {
+        val datasourceUpdater = project.service<TpuDatasourceUpdater>()
+        project.messageBus.connect().subscribe(ExecutionManager.EXECUTION_TOPIC, executionListener(datasourceUpdater))
+    }
 
-   private fun executionListener(datasourceUpdater: TpuDatasourceUpdater) = object : ExecutionListener {
-      override fun processStarted(executorId: String, env: ExecutionEnvironment, handler: ProcessHandler) {
-         handler.addProcessListener(processAdapter(datasourceUpdater))
-      }
-   }
+    private fun executionListener(datasourceUpdater: TpuDatasourceUpdater) = object : ExecutionListener {
+        override fun processStarted(executorId: String, env: ExecutionEnvironment, handler: ProcessHandler) {
+            handler.addProcessListener(processAdapter(datasourceUpdater))
+        }
+    }
 
-   private fun processAdapter(datasourceUpdater: TpuDatasourceUpdater) = object : ProcessAdapter() {
-      override fun onTextAvailable(event: ProcessEvent, outputType: Key<*>) {
+    private fun processAdapter(datasourceUpdater: TpuDatasourceUpdater) = object : ProcessAdapter() {
+        override fun onTextAvailable(event: ProcessEvent, outputType: Key<*>) {
 
-         if (outputType == ProcessOutputTypes.STDOUT && event.text.isNotBlank()) {
-            datasourceUpdater.process(event.text)
-         }
-      }
-   }
+            if (outputType == ProcessOutputTypes.STDOUT && event.text.isNotBlank()) {
+                datasourceUpdater.process(event.text)
+            }
+        }
+    }
 }
