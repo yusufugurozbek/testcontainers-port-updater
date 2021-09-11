@@ -22,7 +22,6 @@ plugins {
 group = properties("pluginGroup")
 version = properties("pluginVersion")
 val javaVersion = properties("javaVersion")
-val kotlinVersion = "1.5.21"
 
 // Configure project's dependencies
 repositories {
