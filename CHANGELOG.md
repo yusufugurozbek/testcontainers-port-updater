@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Add minor improvements for readability
 
 ## [0.0.5]
 - Bump dependencies to their latest versions
