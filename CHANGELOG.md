@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [0.0.7]
 - Run verifier against only IntelliJ IDEA Ultimate
 - Bump dependencies to their latest versions
 
