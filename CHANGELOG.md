@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Support latest IntelliJ 2021.3
 
 ## [0.0.7]
 - Run verifier against only IntelliJ IDEA Ultimate
