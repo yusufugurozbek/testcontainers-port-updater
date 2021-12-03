@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [0.0.8]
 - Bump dependencies to their latest versions
 - Support latest IntelliJ 2021.3
 
