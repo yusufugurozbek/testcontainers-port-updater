@@ -36,7 +36,7 @@ Example log;
 2021-06-23 14:07:26.408  INFO [your-service,,] 11111 --- [           main] o.f.c.i.database.base.DatabaseType       : Database: jdbc:postgresql://localhost:12345/test (PostgreSQL 10.13)
 ```
 
-2- You need to add a new data source into your IntelliJ. For more details, please visit [this page](https://www.jetbrains.com/help/idea/connecting-to-a-database.html) from IntelliJ.
+2- Copy the URL from the Testcontainers log and add it to your IntelliJ as a new data source. For more details, please visit [this page](https://www.jetbrains.com/help/idea/connecting-to-a-database.html) from IntelliJ.
 
 After covering these 2 requirements, the plugin automatically will catch the log and update the matched data source URL with the Testcontainers' one.
 
