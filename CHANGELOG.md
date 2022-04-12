@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Change the way of handling console output from process handler output to IntelliJ console
+- Bump dependencies to their latest versions
+- Support latest IntelliJ 2021.3.3
 
 ## [0.0.8]
 - Bump dependencies to their latest versions
