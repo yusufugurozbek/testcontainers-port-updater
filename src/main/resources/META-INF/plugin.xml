@@ -10,15 +10,10 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <projectService
-                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.TpuService"/>
-        <projectService
-                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.services.DatasourceUpdater"
-                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.services.DatasourceUpdaterImpl"/>
+                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.api.DatasourceUpdater"
+                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.DatasourceUpdaterImpl"/>
         <notificationGroup id="Testcontainers Port Updater" displayType="BALLOON"/>
+        <consoleFilterProvider
+                implementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.ConsoleFilterProviderImpl"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.yusufugurozbek.testcontainers.port.updater.TpuManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>

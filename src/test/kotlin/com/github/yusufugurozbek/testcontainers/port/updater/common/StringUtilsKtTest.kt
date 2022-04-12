@@ -1,4 +1,4 @@
-package com.github.yusufugurozbek.testcontainers.port.updater
+package com.github.yusufugurozbek.testcontainers.port.updater.common
 
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue

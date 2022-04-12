@@ -1,4 +1,4 @@
-package com.github.yusufugurozbek.testcontainers.port.updater.services
+package com.github.yusufugurozbek.testcontainers.port.updater
 
 import com.github.yusufugurozbek.testcontainers.port.updater.TestConstants.DATASOURCE_URL
 import com.github.yusufugurozbek.testcontainers.port.updater.TestConstants.LOG_ENTRY
