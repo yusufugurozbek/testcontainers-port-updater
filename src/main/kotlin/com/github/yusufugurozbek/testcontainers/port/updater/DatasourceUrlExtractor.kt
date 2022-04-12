@@ -1,4 +1,4 @@
-package com.github.yusufugurozbek.testcontainers.port.updater.services
+package com.github.yusufugurozbek.testcontainers.port.updater
 
 class DatasourceUrlExtractor {
 

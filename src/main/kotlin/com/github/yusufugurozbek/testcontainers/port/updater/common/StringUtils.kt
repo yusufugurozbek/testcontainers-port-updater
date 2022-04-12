@@ -1,4 +1,4 @@
-package com.github.yusufugurozbek.testcontainers.port.updater
+package com.github.yusufugurozbek.testcontainers.port.updater.common
 
 private val PORT_REGEX = ":\\d+".toRegex()
 

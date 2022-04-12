@@ -1,4 +1,4 @@
-package com.github.yusufugurozbek.testcontainers.port.updater
+package com.github.yusufugurozbek.testcontainers.port.updater.common
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls
