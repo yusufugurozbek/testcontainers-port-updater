@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Support latest IntelliJ 2022.1
+- Bump gradle from 7.0.2 to 7.4.2
 
 ## [0.1.0]
 - Change the way of handling console output from process handler output to IntelliJ console
