@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [0.1.1]
 - Support latest IntelliJ 2022.1
 - Bump gradle from 7.0.2 to 7.4.2
 
