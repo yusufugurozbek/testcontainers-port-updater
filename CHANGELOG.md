@@ -1,6 +1,7 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Improve regex pattern
 
 ## [0.1.1]
 - Support latest IntelliJ 2022.1
