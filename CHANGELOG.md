@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [0.1.2]
 - Improve regex pattern
 
 ## [0.1.1]
