@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.0.0]
 - Bump dependencies to their latest versions
 - Make it possible to enable/disable 'Updated data source URL' notifications via plugin settings
 
