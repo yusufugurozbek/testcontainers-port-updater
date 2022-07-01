@@ -40,6 +40,14 @@ Example log;
 
 After covering these 2 requirements, the plugin automatically will catch the log and update the matched data source URL with the Testcontainers' one.
 
+### Plugin Settings
+
+To adjust Testcontainers Port Updater plugin settings, open IntelliJ preferences and navigate to **Tools | Testcontainers Port Updater**.
+
+Currently, there is only one setting is possible:
+
+- To enable/disable 'Updated data source URL' notifications, check/uncheck "Do you want to get notified from Testcontainers Port Updater?" option.
+
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 

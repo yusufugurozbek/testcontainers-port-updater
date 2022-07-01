@@ -4,6 +4,7 @@ import com.github.yusufugurozbek.testcontainers.port.updater.DatasourceUrlExtrac
 import com.github.yusufugurozbek.testcontainers.port.updater.api.DatasourceUpdater
 import com.github.yusufugurozbek.testcontainers.port.updater.common.TpuNotifier
 import com.github.yusufugurozbek.testcontainers.port.updater.common.equalsIgnoringPort
+import com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsState
 import com.intellij.database.dataSource.LocalDataSource
 import com.intellij.database.psi.DbPsiFacade
 import com.intellij.database.util.DbImplUtil
@@ -24,6 +25,8 @@ class DatasourceUpdaterImpl(var project: Project) : DatasourceUpdater {
 
     private fun update(localDataSource: LocalDataSource, newUrl: String) {
         localDataSource.url = newUrl
-        TpuNotifier.notify(project, "Updated data source URL: $newUrl")
+        if (TpuSettingsState.instance.isNotificationsEnabled) {
+            TpuNotifier.notify(project, "Updated data source URL: $newUrl")
+        }
     }
 }
