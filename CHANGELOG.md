@@ -1,7 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
-- Correct the grammatical mistake of notification setting's text 
+
+## [1.0.1]
+- Correct the grammatical mistake of notification setting's text
 
 ## [1.0.0]
 - Bump dependencies to their latest versions
