@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Support latest IntelliJ 2022.2.1
 
 ## [1.0.1]
 - Correct the grammatical mistake of notification setting's text
