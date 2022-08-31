@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.0.2]
 - Bump dependencies to their latest versions
 - Support latest IntelliJ 2022.2.1
 
