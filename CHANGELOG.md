@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Support latest IntelliJ 2022.2.3
+- Bump dependencies to their latest versions
+- Modify Regex to handle also MSSQL Server and MySQL
 
 ## [1.0.2]
 - Bump dependencies to their latest versions
