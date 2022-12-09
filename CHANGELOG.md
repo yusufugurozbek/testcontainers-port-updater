@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 - Support latest IntelliJ 2022.3
+- Bump Java version to 17
 
 ## [1.0.3]
 - Support latest IntelliJ 2022.2.3
