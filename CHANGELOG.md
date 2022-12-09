@@ -1,6 +1,11 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Support latest IntelliJ 2022.3
+- Bump Java version to 17
+- Bump dependencies to their latest versions
+- Bump Gradle version to 7.5.1
+- Migrate latest changes of intellij-platform-plugin-template
 
 ## [1.0.3]
 - Support latest IntelliJ 2022.2.3
