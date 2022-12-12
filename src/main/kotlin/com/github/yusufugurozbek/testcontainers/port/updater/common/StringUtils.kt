@@ -8,3 +8,7 @@ fun String.equalsIgnoringPort(other: String): Boolean {
 
     return thisWithoutNumbers == otherWithoutNumbers
 }
+
+fun String.hasPort(): Boolean {
+    return PORT_REGEX.containsMatchIn(this)
+}
