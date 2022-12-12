@@ -21,4 +21,14 @@ internal class StringUtilsKtTest : BasePlatformTestCase() {
         val jdbcStringB = "jdbc:sqlserver://localhost:55001/test"
         assertFalse(jdbcStringA.equalsIgnoringPort(jdbcStringB))
     }
+
+    fun `test hasPort successfully detects the port`() {
+        val jdbcString = "jdbc:postgresql://localhost:55001/test"
+        assertTrue(jdbcString.hasPort())
+    }
+
+    fun `test hasPort successfully detects no port`() {
+        val jdbcString = "jdbc:postgresql://localhost/test"
+        assertFalse(jdbcString.hasPort())
+    }
 }
