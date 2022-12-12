@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.0.4] - 2022-12-12
 - Support latest IntelliJ 2022.3
 - Bump Java version to 17
 - Bump dependencies to their latest versions
@@ -58,9 +60,28 @@
 - Update the plugin for the latest IntelliJ version 2021.2
 
 ## [0.0.3]
+
 ### Updated
 - Update README.md
 
 ## [0.0.2]
+
 ### Added
 - Create the plugin
+
+[Unreleased]: null/compare/v1.0.4...HEAD
+[1.0.4]: null/compare/v1.0.3...v1.0.4
+[1.0.3]: null/compare/v1.0.2...v1.0.3
+[1.0.2]: null/compare/v1.0.1...v1.0.2
+[1.0.1]: null/compare/v1.0.0...v1.0.1
+[1.0.0]: null/compare/v0.1.2...v1.0.0
+[0.1.2]: null/compare/v0.1.1...v0.1.2
+[0.1.1]: null/compare/v0.1.0...v0.1.1
+[0.1.0]: null/compare/v0.0.8...v0.1.0
+[0.0.8]: null/compare/v0.0.7...v0.0.8
+[0.0.7]: null/compare/v0.0.6...v0.0.7
+[0.0.6]: null/compare/v0.0.5...v0.0.6
+[0.0.5]: null/compare/v0.0.4...v0.0.5
+[0.0.4]: null/compare/v0.0.3...v0.0.4
+[0.0.3]: null/compare/v0.0.2...v0.0.3
+[0.0.2]: null/commits/v0.0.2
