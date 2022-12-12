@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions 
+- Fix unnecessary updates on the data source URL
+- Bump Gradle version to 7.6
 
 ## [1.0.4] - 2022-12-12
 - Support latest IntelliJ 2022.3
