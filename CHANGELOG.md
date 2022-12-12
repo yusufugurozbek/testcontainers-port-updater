@@ -1,7 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
-- Bump dependencies to their latest versions 
+
+## [1.0.5] - 2022-12-12
+- Bump dependencies to their latest versions
 - Fix unnecessary updates on the data source URL
 - Bump Gradle version to 7.6
 
@@ -72,7 +74,8 @@
 ### Added
 - Create the plugin
 
-[Unreleased]: null/compare/v1.0.4...HEAD
+[Unreleased]: null/compare/v1.0.5...HEAD
+[1.0.5]: null/compare/v1.0.4...v1.0.5
 [1.0.4]: null/compare/v1.0.3...v1.0.4
 [1.0.3]: null/compare/v1.0.2...v1.0.3
 [1.0.2]: null/compare/v1.0.1...v1.0.2
