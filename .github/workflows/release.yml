@@ -1,5 +1,6 @@
-# GitHub Actions Workflow created for handling the release process based on the draft release prepared
-# with the Build workflow. Running the publishPlugin task requires the PUBLISH_TOKEN secret provided.
+# GitHub Actions Workflow created for handling the release process based on the draft release prepared with the Build workflow.
+# Running the publishPlugin task requires all following secrets to be provided: PUBLISH_TOKEN, PRIVATE_KEY, PRIVATE_KEY_PASSWORD, CERTIFICATE_CHAIN.
+# See https://plugins.jetbrains.com/docs/intellij/plugin-signing.html for more information.
 
 name: Release
 on:
@@ -44,7 +45,7 @@ jobs:
           CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
           CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
 
-          echo "::set-output name=changelog::$CHANGELOG"
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
 
       # Update Unreleased section with the current release note
       - name: Patch Changelog
