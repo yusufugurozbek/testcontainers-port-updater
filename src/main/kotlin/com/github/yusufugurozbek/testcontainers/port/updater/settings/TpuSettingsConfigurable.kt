@@ -12,28 +12,21 @@ class TpuSettingsConfigurable : Configurable {
         return TpuBundle.message("name")
     }
 
-    override fun getPreferredFocusedComponent(): JComponent {
-        return settingsComponent!!.preferredFocusedComponent
-    }
-
     override fun createComponent(): JComponent {
         settingsComponent = TpuSettingsComponent()
-        return settingsComponent!!.panel
+        return settingsComponent!!.settingsPanel
     }
 
     override fun isModified(): Boolean {
-        val settings: TpuSettingsState = TpuSettingsState.instance
-        return settingsComponent!!.isNotificationsEnabled != settings.isNotificationsEnabled
+        return settingsComponent!!.settingsPanel.isModified()
     }
 
     override fun apply() {
-        val settings: TpuSettingsState = TpuSettingsState.instance
-        settings.isNotificationsEnabled = settingsComponent!!.isNotificationsEnabled
+        settingsComponent!!.settingsPanel.apply()
     }
 
     override fun reset() {
-        val settings: TpuSettingsState = TpuSettingsState.instance
-        settingsComponent!!.isNotificationsEnabled = settings.isNotificationsEnabled
+        settingsComponent!!.settingsPanel.reset()
     }
 
     override fun disposeUIResources() {
