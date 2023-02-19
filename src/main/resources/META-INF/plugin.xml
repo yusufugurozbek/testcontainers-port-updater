@@ -10,8 +10,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <projectService
-                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.api.DatasourceUpdater"
-                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.DatasourceUpdaterImpl"/>
+                serviceInterface="com.github.yusufugurozbek.testcontainers.port.updater.api.DataSourceUpdater"
+                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.DataSourceUpdaterImpl"/>
         <notificationGroup id="Testcontainers Port Updater" displayType="BALLOON"/>
         <consoleFilterProvider
                 implementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.ConsoleFilterProviderImpl"/>

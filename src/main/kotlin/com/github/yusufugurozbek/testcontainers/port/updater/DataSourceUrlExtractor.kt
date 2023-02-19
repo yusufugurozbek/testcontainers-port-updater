@@ -1,6 +1,6 @@
 package com.github.yusufugurozbek.testcontainers.port.updater
 
-class DatasourceUrlExtractor {
+class DataSourceUrlExtractor {
 
     private val regex: Regex = "Database: ((.*?)((?!\\S)(\\s.*\\w.*;|)))".toRegex()
 

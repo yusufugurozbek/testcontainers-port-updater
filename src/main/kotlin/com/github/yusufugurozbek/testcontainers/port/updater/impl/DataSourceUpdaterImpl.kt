@@ -1,7 +1,7 @@
 package com.github.yusufugurozbek.testcontainers.port.updater.impl
 
-import com.github.yusufugurozbek.testcontainers.port.updater.DatasourceUrlExtractor
-import com.github.yusufugurozbek.testcontainers.port.updater.api.DatasourceUpdater
+import com.github.yusufugurozbek.testcontainers.port.updater.DataSourceUrlExtractor
+import com.github.yusufugurozbek.testcontainers.port.updater.api.DataSourceUpdater
 import com.github.yusufugurozbek.testcontainers.port.updater.common.TpuNotifier
 import com.github.yusufugurozbek.testcontainers.port.updater.common.equalsIgnoringPort
 import com.github.yusufugurozbek.testcontainers.port.updater.common.hasPort
@@ -11,9 +11,9 @@ import com.intellij.database.psi.DbPsiFacade
 import com.intellij.database.util.DbImplUtil
 import com.intellij.openapi.project.Project
 
-class DatasourceUpdaterImpl(var project: Project) : DatasourceUpdater {
+class DataSourceUpdaterImpl(var project: Project) : DataSourceUpdater {
 
-    private var urlExtractor: DatasourceUrlExtractor = DatasourceUrlExtractor()
+    private var urlExtractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
 
     override fun update(logEntryText: String) {
         urlExtractor.extract(logEntryText)?.let { newUrl ->
