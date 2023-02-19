@@ -10,9 +10,9 @@ import com.github.yusufugurozbek.testcontainers.port.updater.TestConstants.LOG_E
 import com.github.yusufugurozbek.testcontainers.port.updater.TestConstants.LOG_ENTRY_POSTGRESQL_2
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 
-internal class DatasourceUrlExtractorTest : BasePlatformTestCase() {
+internal class DataSourceUrlExtractorTest : BasePlatformTestCase() {
 
-    private val sut = DatasourceUrlExtractor()
+    private val sut = DataSourceUrlExtractor()
 
     fun `test extractDataSourceUrl successfully extracts url if present with driver part`() {
         assertEquals(sut.extract(LOG_ENTRY_POSTGRESQL_1), DATASOURCE_URL_POSTGRESQL_1)
