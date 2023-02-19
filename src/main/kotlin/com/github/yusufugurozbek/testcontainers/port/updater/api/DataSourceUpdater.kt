@@ -1,6 +1,6 @@
 package com.github.yusufugurozbek.testcontainers.port.updater.api
 
-interface DatasourceUpdater {
+interface DataSourceUpdater {
 
     /**
      * Process log entry and update data source if updated log entry is present

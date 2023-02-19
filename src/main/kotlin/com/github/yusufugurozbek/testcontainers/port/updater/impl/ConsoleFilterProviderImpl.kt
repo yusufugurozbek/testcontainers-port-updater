@@ -6,6 +6,6 @@ import com.intellij.openapi.project.Project
 
 class ConsoleFilterProviderImpl : ConsoleFilterProvider {
     override fun getDefaultFilters(project: Project): Array<Filter> {
-        return arrayOf(DatasourceFilter(project))
+        return arrayOf(DataSourceFilter(project))
     }
 }
