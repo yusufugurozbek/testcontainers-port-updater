@@ -3,7 +3,11 @@
 ## [Unreleased]
 - Bump dependencies to their latest versions 
 - Fix unnecessary updates on the data source URL
-- Bump Gradle version to 7.6
+- Bump Gradle version to 8.0.1
+- Use Kotlin UI DSL Version 2 for settings
+- Make log entry prefix editable via settings / Now you can change the log entry prefix via settings
+- Switch settings from application level to project level / Now each project has its own settings
+- Introduce match mode feature / Now you can select your match mode via settings
 
 ## [1.0.4] - 2022-12-12
 - Support latest IntelliJ 2022.3
