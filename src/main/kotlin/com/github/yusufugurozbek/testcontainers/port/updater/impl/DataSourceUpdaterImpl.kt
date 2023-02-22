@@ -8,14 +8,16 @@ import com.github.yusufugurozbek.testcontainers.port.updater.equalsIgnoringPort
 import com.github.yusufugurozbek.testcontainers.port.updater.settings.MatchMode
 import com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsState
 import com.intellij.database.dataSource.LocalDataSource
+import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 
 class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
 
     private var urlExtractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
+    private var settingsState: TpuSettingsState = project.service()
 
     override fun update(localDataSources: List<LocalDataSource>, logEntryText: String) {
-        val splitLogEntry = logEntryText.split(TpuSettingsState.instance.logEntryPrefix)
+        val splitLogEntry = logEntryText.split(settingsState.logEntryPrefix)
         if (splitLogEntry.size == 2) {
             urlExtractor.extract(splitLogEntry[1])?.let { logEntryDataSourceUrl ->
                 localDataSources
@@ -32,7 +34,7 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
             return
         }
 
-        val isUpdatable = when (TpuSettingsState.instance.matchMode) {
+        val isUpdatable = when (settingsState.matchMode) {
             MatchMode.EXACT -> localDataSourceUrl.equalsIgnoringPort(logEntryDataSourceUrl)
             MatchMode.EVERYTHING -> localDataSourceUrl.beforePort == logEntryDataSourceUrl.beforePort
             MatchMode.WITH_TESTCONTAINERS_PARAMETER ->
@@ -43,7 +45,7 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
         if (isUpdatable) {
             val newUrl = localDataSourceUrl.toString().replace(localDataSourceUrl.port, logEntryDataSourceUrl.port)
             localDataSource.url = newUrl
-            if (TpuSettingsState.instance.isNotificationsEnabled) {
+            if (settingsState.isNotificationsEnabled) {
                 TpuNotifier.notify(project, "Updated data source URL: $newUrl")
             }
         }

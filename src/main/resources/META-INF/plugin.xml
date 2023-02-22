@@ -15,13 +15,14 @@
         <notificationGroup id="Testcontainers Port Updater" displayType="BALLOON"/>
         <consoleFilterProvider
                 implementation="com.github.yusufugurozbek.testcontainers.port.updater.impl.ConsoleFilterProviderImpl"/>
-        <applicationConfigurable
+        <projectConfigurable
                 id="com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsConfigurable"
                 parentId="tools"
                 instance="com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsConfigurable"
                 bundle="messages.TpuBundle"
-                key="name"/>
-        <applicationService
+                key="name"
+                nonDefaultProject="true"/>
+        <projectService
                 serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsState"/>
     </extensions>
 </idea-plugin>
