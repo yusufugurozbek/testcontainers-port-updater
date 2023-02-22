@@ -1,5 +1,6 @@
 package com.github.yusufugurozbek.testcontainers.port.updater.settings
 
+import com.intellij.database.util.common.isNotNullOrEmpty
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
@@ -12,6 +13,12 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 )
 class TpuSettingsState : PersistentStateComponent<TpuSettingsState?> {
     var isNotificationsEnabled: Boolean = true
+    var logEntryPrefix: String = "Database:"
+        set(value) {
+            if (value.isNotNullOrEmpty) {
+                field = value
+            }
+        }
     var matchMode: MatchMode = MatchMode.EXACT
 
     override fun getState(): TpuSettingsState {
