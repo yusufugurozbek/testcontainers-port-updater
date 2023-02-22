@@ -27,27 +27,42 @@ If you don't know what is Testcontainers, please check their official web page h
 
 ## Usage
 
-For having a working plugin there are 2 requirements;
+For having a working plugin, there are 2 requirements;
 
-1- The plugin expects that Testcontainers writes a log that starts with ` Database: `. If you don't see any logs on your console, please check your Testcontainers configurations and your log level.
+1- The plugin expects that your application writes a log that starts with the log entry prefix (default log entry prefix is `Database:`).
+If you don't see any logs on your console, please check your configurations and your log level.
 
 Example log; 
 ```
 2021-06-23 14:07:26.408  INFO [your-service,,] 11111 --- [           main] o.f.c.i.database.base.DatabaseType       : Database: jdbc:postgresql://localhost:12345/test (PostgreSQL 10.13)
 ```
 
-2- Copy the URL from the Testcontainers log and add it to your IntelliJ as a new data source. For more details, please visit [this page](https://www.jetbrains.com/help/idea/connecting-to-a-database.html) from IntelliJ.
+2- Copy the URL (`jdbc:postgresql://localhost:12345/test`) from the console log and add it to your IntelliJ as a new data source. 
+For more details, please visit [this page](https://www.jetbrains.com/help/idea/connecting-to-a-database.html) from IntelliJ.
 
 After covering these 2 requirements, the plugin automatically will catch the log and update the matched data source URL with the Testcontainers' one.
 
 ### Plugin Settings
 
 To adjust Testcontainers Port Updater plugin settings, open IntelliJ preferences and navigate to **Tools | Testcontainers Port Updater**.
+Please be aware, settings are stored on the project level, so each project has its own settings.
 
-Currently, there is only one setting is possible:
-
-- To enable/disable 'Updated data source URL' notifications, check/uncheck "Do you want to get notified from Testcontainers Port Updater?" option.
-
+#### - `Enable notifications` Enable/disable 'Updated data source URL' notifications
+#### - `Enter log entry prefix` Default is `Database:`
+#### - `Select match mode`
+  - `Exact match`<br>
+    Logged data source URL and IntelliJ data source URL should be the same ignoring port part. Example match will be:<br>
+    <b>Logged data source URL:</b> `Database: jdbc:postgresql://localhost:11111/test?loggerLevel=OFF`<br>
+    <b>IntelliJ data source URL:</b> `jdbc:postgresql://localhost:22222/test?loggerLevel=OFF`<br><br>
+  - `Everything`<br>
+    Before the port part (`jdbc:postgresql://localhost`) should be the same for the logged data source URL and IntelliJ data source URL. Example match will be:<br>
+    <b>Logged data source URL:</b> `Database: jdbc:postgresql://localhost:11111/test`<br>
+    <b>IntelliJ data source URL:</b> `jdbc:postgresql://localhost:22222/test?loggerLevel=OFF`<br><br>
+  - `With testcontainers=true parameter`<br>
+    IntelliJ data source URL should contain `testcontainers=true` and before the port part (`jdbc:postgresql://localhost`) should be the same\
+    for the logged data source URL and IntelliJ data source URL. Example match will be:<br>
+    <b>Logged data source URL:</b> `Database: jdbc:postgresql://localhost:11111/test?loggerLevel=OFF`<br>
+    <b>IntelliJ data source URL:</b> `jdbc:postgresql://localhost:22222/test?testcontainers=true`
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
