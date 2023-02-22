@@ -15,7 +15,7 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
     private var urlExtractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
 
     override fun update(localDataSources: List<LocalDataSource>, logEntryText: String) {
-        val splitLogEntry = logEntryText.split("Database: ")
+        val splitLogEntry = logEntryText.split(TpuSettingsState.instance.logEntryPrefix)
         if (splitLogEntry.size == 2) {
             urlExtractor.extract(splitLogEntry[1])?.let { logEntryDataSourceUrl ->
                 localDataSources

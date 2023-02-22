@@ -12,6 +12,12 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 )
 class TpuSettingsState : PersistentStateComponent<TpuSettingsState?> {
     var isNotificationsEnabled: Boolean = true
+    var logEntryPrefix: String = "Database:"
+        set(value) {
+            if (value.isNotEmpty()) {
+                field = value
+            }
+        }
     var matchMode: MatchMode = MatchMode.EXACT
 
     override fun getState(): TpuSettingsState {
