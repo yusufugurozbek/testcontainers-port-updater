@@ -11,19 +11,19 @@ import com.intellij.ui.dsl.gridLayout.HorizontalAlign
 import com.intellij.ui.dsl.gridLayout.VerticalAlign
 
 
-class TpuSettingsComponent {
+class TpuSettingsComponent(private val tpuSettingsState: TpuSettingsState) {
     private val disposable = Disposer.newDisposable()
 
     val settingsPanel: DialogPanel = panel {
         row {
-            checkBox(TpuBundle.message("settings.isNotificationsEnabledText")).bindSelected(TpuSettingsState.instance::isNotificationsEnabled)
+            checkBox(TpuBundle.message("settings.isNotificationsEnabledText")).bindSelected(tpuSettingsState::isNotificationsEnabled)
                 .focused()
         }
 
         separator()
 
         row(TpuBundle.message("settings.logEntryPrefixText")) {
-            textField().bindText(TpuSettingsState.instance::logEntryPrefix)
+            textField().bindText(tpuSettingsState::logEntryPrefix)
                 .validationOnInput { if (it.text.isEmpty()) error(TpuBundle.message("settings.logEntryPrefixMustBeGiven")) else null }
         }
 
@@ -45,7 +45,7 @@ class TpuSettingsComponent {
                     MatchMode.WITH_TESTCONTAINERS_PARAMETER
                 )
             }
-        }.bind(TpuSettingsState.instance::matchMode)
+        }.bind(tpuSettingsState::matchMode)
 
         separator()
 
