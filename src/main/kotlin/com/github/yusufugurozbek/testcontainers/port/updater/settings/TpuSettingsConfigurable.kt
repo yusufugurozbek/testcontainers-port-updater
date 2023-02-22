@@ -1,11 +1,13 @@
 package com.github.yusufugurozbek.testcontainers.port.updater.settings
 
 import com.github.yusufugurozbek.testcontainers.port.updater.common.TpuBundle
+import com.intellij.openapi.components.service
 import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.project.Project
 import org.jetbrains.annotations.Nls
 import javax.swing.JComponent
 
-class TpuSettingsConfigurable : Configurable {
+class TpuSettingsConfigurable(private val project: Project): Configurable {
     private var settingsComponent: TpuSettingsComponent? = null
 
     override fun getDisplayName(): @Nls(capitalization = Nls.Capitalization.Title) String {
@@ -13,7 +15,7 @@ class TpuSettingsConfigurable : Configurable {
     }
 
     override fun createComponent(): JComponent {
-        settingsComponent = TpuSettingsComponent()
+        settingsComponent = TpuSettingsComponent(project.service())
         return settingsComponent!!.settingsPanel
     }
 

@@ -1,6 +1,5 @@
 package com.github.yusufugurozbek.testcontainers.port.updater.settings
 
-import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
@@ -26,10 +25,5 @@ class TpuSettingsState : PersistentStateComponent<TpuSettingsState?> {
 
     override fun loadState(state: TpuSettingsState) {
         XmlSerializerUtil.copyBean(state, this)
-    }
-
-    companion object {
-        val instance: TpuSettingsState
-            get() = ApplicationManager.getApplication().getService(TpuSettingsState::class.java)
     }
 }
