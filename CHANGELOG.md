@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.1.0] - 2023-02-25
 - Bump dependencies to their latest versions
 - Bump Gradle version to 8.0.1
 - Use Kotlin UI DSL Version 2 for settings
@@ -80,7 +82,8 @@
 ### Added
 - Create the plugin
 
-[Unreleased]: null/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.5...v1.1.0
 [1.0.5]: null/compare/v1.0.4...v1.0.5
 [1.0.4]: null/compare/v1.0.3...v1.0.4
 [1.0.3]: null/compare/v1.0.2...v1.0.3
