@@ -1,12 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
-- Bump dependencies to their latest versions
-- Bump Gradle version to 8.0.1
-- Use Kotlin UI DSL Version 2 for settings
-- Switch settings from application level to project level / Now each project has its own settings
-- Make log entry prefix editable via settings / Now you can change the log entry prefix via settings
-- Introduce match mode feature / Now you can select your match mode via settings
+
+## [1.1.0] - 2023-02-25
+- Bump dependencies to their latest versions%0D%0A- Bump Gradle version to 8.0.1%0D%0A- Use Kotlin UI DSL Version 2 for settings%0D%0A- Switch settings from application level to project level / Now each project has its own settings%0D%0A- Make log entry prefix editable via settings / Now you can change the log entry prefix via settings%0D%0A- Introduce match mode feature / Now you can select your match mode via settings%0D%0A%0A[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.5...HEAD
 
 ## [1.0.5] - 2022-12-12
 - Bump dependencies to their latest versions
@@ -80,7 +77,8 @@
 ### Added
 - Create the plugin
 
-[Unreleased]: null/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.5...v1.1.0
 [1.0.5]: null/compare/v1.0.4...v1.0.5
 [1.0.4]: null/compare/v1.0.3...v1.0.4
 [1.0.3]: null/compare/v1.0.2...v1.0.3
