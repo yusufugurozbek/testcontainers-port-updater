@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Bump Gradle version to 8.0.2
+- Migrate latest changes of intellij-platform-plugin-template
 
 ## [1.1.0] - 2023-02-25
 - Bump dependencies to their latest versions
@@ -88,19 +91,19 @@
 
 [Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.5...v1.1.0
-[1.0.5]: null/compare/v1.0.4...v1.0.5
-[1.0.4]: null/compare/v1.0.3...v1.0.4
-[1.0.3]: null/compare/v1.0.2...v1.0.3
-[1.0.2]: null/compare/v1.0.1...v1.0.2
-[1.0.1]: null/compare/v1.0.0...v1.0.1
-[1.0.0]: null/compare/v0.1.2...v1.0.0
-[0.1.2]: null/compare/v0.1.1...v0.1.2
-[0.1.1]: null/compare/v0.1.0...v0.1.1
-[0.1.0]: null/compare/v0.0.8...v0.1.0
-[0.0.8]: null/compare/v0.0.7...v0.0.8
-[0.0.7]: null/compare/v0.0.6...v0.0.7
-[0.0.6]: null/compare/v0.0.5...v0.0.6
-[0.0.5]: null/compare/v0.0.4...v0.0.5
-[0.0.4]: null/compare/v0.0.3...v0.0.4
-[0.0.3]: null/compare/v0.0.2...v0.0.3
-[0.0.2]: null/commits/v0.0.2
+[1.0.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.4...v1.0.5
+[1.0.4]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.1.2...v1.0.0
+[0.1.2]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.8...v0.1.0
+[0.0.8]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.7...v0.0.8
+[0.0.7]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.6...v0.0.7
+[0.0.6]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.5...v0.0.6
+[0.0.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.4...v0.0.5
+[0.0.4]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.3...v0.0.4
+[0.0.3]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.2...v0.0.3
+[0.0.2]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v0.0.1...v0.0.2
