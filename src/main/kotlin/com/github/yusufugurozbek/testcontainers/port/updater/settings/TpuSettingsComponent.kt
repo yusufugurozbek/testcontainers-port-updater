@@ -7,8 +7,6 @@ import com.intellij.ui.dsl.builder.bind
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.dsl.builder.panel
-import com.intellij.ui.dsl.gridLayout.HorizontalAlign
-import com.intellij.ui.dsl.gridLayout.VerticalAlign
 
 
 class TpuSettingsComponent(private val tpuSettingsState: TpuSettingsState) {
@@ -20,14 +18,10 @@ class TpuSettingsComponent(private val tpuSettingsState: TpuSettingsState) {
                 .focused()
         }
 
-        separator()
-
         row(TpuBundle.message("settings.logEntryPrefixText")) {
             textField().bindText(tpuSettingsState::logEntryPrefix)
                 .validationOnInput { if (it.text.isEmpty()) error(TpuBundle.message("settings.logEntryPrefixMustBeGiven")) else null }
         }
-
-        separator()
 
         buttonsGroup(TpuBundle.message("settings.matchModeText")) {
             row {
@@ -47,12 +41,10 @@ class TpuSettingsComponent(private val tpuSettingsState: TpuSettingsState) {
             }
         }.bind(tpuSettingsState::matchMode)
 
-        separator()
-
-        row {
-            text(TpuBundle.message("settings.giveAStar"))
-                .verticalAlign(VerticalAlign.BOTTOM)
-                .horizontalAlign(HorizontalAlign.RIGHT)
+        group {
+            row {
+                text(TpuBundle.message("settings.giveAStar"))
+            }
         }
     }.also { it.registerValidators(disposable) }
 }
