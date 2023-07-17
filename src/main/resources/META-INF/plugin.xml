@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.github.yusufugurozbek.testcontainers.port.updater</id>
     <name>Testcontainers Port Updater</name>
-    <vendor>Yusuf Ugur ÖZBEK</vendor>
+    <vendor email="yusufugurozbek@hotmail.com">Yusuf Ugur ÖZBEK</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
