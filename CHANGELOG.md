@@ -1,6 +1,8 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.1.2] - 2023-08-18
 - Introduce JSON logging format / Now you can change the logging format via settings
 - Support latest IntelliJ 2023.2
 - Bump dependencies to their latest versions
@@ -96,7 +98,8 @@
 ### Added
 - Create the plugin
 
-[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.0.4...v1.0.5
