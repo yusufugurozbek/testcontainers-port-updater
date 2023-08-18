@@ -5,11 +5,16 @@ import com.github.yusufugurozbek.testcontainers.port.updater.DataSourceUrlExtrac
 import com.github.yusufugurozbek.testcontainers.port.updater.api.DataSourceUpdater
 import com.github.yusufugurozbek.testcontainers.port.updater.common.TpuNotifier
 import com.github.yusufugurozbek.testcontainers.port.updater.equalsIgnoringPort
+import com.github.yusufugurozbek.testcontainers.port.updater.settings.LoggingFormat
 import com.github.yusufugurozbek.testcontainers.port.updater.settings.MatchMode
 import com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsState
 import com.intellij.database.dataSource.LocalDataSource
 import com.intellij.openapi.components.service
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
 class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
 
@@ -17,7 +22,9 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
     private var settingsState: TpuSettingsState = project.service()
 
     override fun update(localDataSources: List<LocalDataSource>, logEntryText: String) {
-        val splitLogEntry = logEntryText.split(settingsState.logEntryPrefix)
+        val logEntry = getLogMessage(logEntryText)
+
+        val splitLogEntry = logEntry.split(settingsState.logEntryPrefix)
         if (splitLogEntry.size == 2) {
             urlExtractor.extract(splitLogEntry[1])?.let { logEntryDataSourceUrl ->
                 localDataSources
@@ -25,6 +32,17 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
                     .forEach { update(it, logEntryDataSourceUrl) }
             }
         }
+    }
+
+    private fun getLogMessage(logEntryText: String): String {
+        if (settingsState.loggingFormat == LoggingFormat.JSON && logEntryText.contains(settingsState.logEntryPrefix)) {
+            try {
+                return Json.parseToJsonElement(logEntryText).jsonObject["message"]!!.jsonPrimitive.content
+            } catch (e: Exception) {
+                thisLogger().warn("JSON log message cannot be extracted", e)
+            }
+        }
+        return logEntryText
     }
 
     private fun update(localDataSource: LocalDataSource, logEntryDataSourceUrl: DataSourceUrl) {

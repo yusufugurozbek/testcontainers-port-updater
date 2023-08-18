@@ -22,7 +22,5 @@
                 bundle="messages.TpuBundle"
                 key="name"
                 nonDefaultProject="true"/>
-        <projectService
-                serviceImplementation="com.github.yusufugurozbek.testcontainers.port.updater.settings.TpuSettingsState"/>
     </extensions>
 </idea-plugin>
