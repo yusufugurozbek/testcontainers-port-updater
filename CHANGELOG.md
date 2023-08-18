@@ -4,8 +4,8 @@
 - Introduce JSON logging format / Now you can change the logging format via settings
 - Support latest IntelliJ 2023.2
 - Bump dependencies to their latest versions
-- Bump Gradle version to 8.2.1
-- Migrate latest changes of intellij-platform-plugin-template v1.9.0
+- Bump Gradle version to 8.3
+- Migrate latest changes of intellij-platform-plugin-template v1.11.1
 
 ## [1.1.1] - 2023-04-06
 - Bump dependencies to their latest versions
