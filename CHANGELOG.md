@@ -1,6 +1,7 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Introduce JSON logging format / Now you can change the logging format via settings
 - Support latest IntelliJ 2023.2
 - Bump dependencies to their latest versions
 - Bump Gradle version to 8.2.1

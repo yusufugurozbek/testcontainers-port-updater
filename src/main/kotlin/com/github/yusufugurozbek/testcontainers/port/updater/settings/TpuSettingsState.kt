@@ -20,6 +20,7 @@ class TpuSettingsState : PersistentStateComponent<TpuSettingsState?> {
             }
         }
     var matchMode: MatchMode = MatchMode.EXACT
+    var loggingFormat: LoggingFormat = LoggingFormat.SIMPLE_TEXT
 
     override fun getState(): TpuSettingsState {
         return this

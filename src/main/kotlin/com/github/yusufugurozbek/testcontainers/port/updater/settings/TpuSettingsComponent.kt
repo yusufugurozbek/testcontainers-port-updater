@@ -41,6 +41,15 @@ class TpuSettingsComponent(private val tpuSettingsState: TpuSettingsState) {
             }
         }.bind(tpuSettingsState::matchMode)
 
+        buttonsGroup(TpuBundle.message("settings.loggingFormat")) {
+            row {
+                radioButton(TpuBundle.message("settings.loggingFormatSimpleText"), LoggingFormat.SIMPLE_TEXT)
+            }
+            row {
+                radioButton(TpuBundle.message("settings.loggingFormatJson"), LoggingFormat.JSON)
+            }
+        }.bind(tpuSettingsState::loggingFormat)
+
         group {
             row {
                 text(TpuBundle.message("settings.giveAStar"))
