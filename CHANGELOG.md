@@ -1,6 +1,10 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Support latest IntelliJ 2023.2.5
+- Bump Gradle version to 8.5
+- Migrate latest changes of intellij-platform-plugin-template v1.11.3
 
 ## [1.1.2] - 2023-08-18
 - Introduce JSON logging format / Now you can change the logging format via settings
