@@ -36,13 +36,13 @@ jobs:
       pluginVerifierHomeDir: ${{ steps.properties.outputs.pluginVerifierHomeDir }}
     steps:
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
       # Validate wrapper
       - name: Gradle Wrapper Validation
-        uses: gradle/wrapper-validation-action@v3
+        uses: gradle/actions/wrapper-validation@v3
 
       # Set up Java environment for the next steps
       - name: Setup Java
@@ -104,7 +104,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
@@ -157,7 +157,7 @@ jobs:
           tool-cache: false
           large-packages: false
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
@@ -188,7 +188,7 @@ jobs:
           tool-cache: false
           large-packages: false
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
@@ -235,7 +235,7 @@ jobs:
       contents: write
     steps:
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
