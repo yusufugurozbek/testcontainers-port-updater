@@ -31,7 +31,7 @@ jobs:
 
     steps:
 
-      # Check out current repository
+      # Check out the current repository
       - name: Fetch Sources
         uses: actions/checkout@v4
 
@@ -44,7 +44,7 @@ jobs:
 
       # Setup Gradle
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
         with:
           gradle-home-cache-cleanup: true
 
