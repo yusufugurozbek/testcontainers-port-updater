@@ -3,7 +3,7 @@
 ## [Unreleased]
 - Bump dependencies to their latest versions
 - Support latest IntelliJ 2024.2.*
-- Bump Gradle version to 8.9
+- Bump Gradle version to 8.10
 - Migrate latest changes of intellij-platform-plugin-template v2.0.1
 
 ## [1.1.4] - 2024-04-15
