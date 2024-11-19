@@ -1,6 +1,6 @@
 # Testcontainers Port Updater
 
-![Build](https://github.com/yusufugurozbek/testcontainers-port-updater/workflows/Build/badge.svg)
+[![Release](https://github.com/yusufugurozbek/testcontainers-port-updater/actions/workflows/release.yml/badge.svg)](https://github.com/yusufugurozbek/testcontainers-port-updater/actions/workflows/release.yml)
 [![Version](https://img.shields.io/jetbrains/plugin/v/17116-testcontainers-port-updater.svg)](https://plugins.jetbrains.com/plugin/17116-testcontainers-port-updater)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/17116-testcontainers-port-updater.svg)](https://plugins.jetbrains.com/plugin/17116-testcontainers-port-updater)
 
