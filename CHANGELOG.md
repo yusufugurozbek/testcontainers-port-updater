@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+## [1.1.6] - 2024-11-19
+
 - Bump dependencies to their latest versions
 - Support latest IntelliJ 2024.3.*
 - Bump Gradle version to 8.11
@@ -142,7 +145,8 @@
 
 - Create the plugin
 
-[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.5...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.6...HEAD
+[1.1.6]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.4...v1.1.5
 [1.1.4]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.2...v1.1.3
