@@ -35,7 +35,7 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
     private fun getLogMessage(logEntryText: String): String {
         if (settingsState.loggingFormat == LoggingFormat.JSON && logEntryText.contains(settingsState.logEntryPrefix)) {
             try {
-                return Json.parseToJsonElement(logEntryText).jsonObject["message"]!!.jsonPrimitive.content
+                return Json.parseToJsonElement(logEntryText).jsonObject["message"]?.jsonPrimitive?.content ?: ""
             } catch (e: Exception) {
                 thisLogger().warn("JSON log message cannot be extracted", e)
             }
@@ -53,7 +53,7 @@ class DataSourceUpdaterImpl(private var project: Project) : DataSourceUpdater {
         val isUpdatable = dataSourceUrl.matches(logEntryDataSourceUrl, settingsState.matchMode)
 
         if (isUpdatable) {
-            val newUrl = dataSourceUrl.toString().replace(dataSourceUrl.port, logEntryDataSourceUrl.port)
+            val newUrl = dataSourceUrl.copy(port = logEntryDataSourceUrl.port).toString()
             localDataSource.url = newUrl
             if (settingsState.isNotificationsEnabled) {
                 TpuNotifier.notify(project, "Updated data source URL: $newUrl")
