@@ -5,7 +5,7 @@ import com.github.yusufugurozbek.testcontainers.port.updater.settings.MatchMode.
 import com.intellij.database.dataSource.LocalDataSource
 import com.intellij.database.util.common.isNotNullOrEmpty
 
-data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?, private val urlExtractor : DataSourceUrlExtractor) {
+data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?, private val urlExtractor: DataSourceUrlExtractor) {
 
     constructor(beforePort: String, port: String, afterPort: String?) : this(beforePort, port, afterPort, DataSourceUrlExtractor())
 
@@ -14,13 +14,12 @@ data class DataSourceUrl(val beforePort: String, val port: String, val afterPort
     }
 
     companion object {
-        private var extractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
+        private lateinit var extractor: DataSourceUrlExtractor
 
-        fun setUrlExtractor(extractor: DataSourceUrlExtractor) {
-            // Initialize extractor when first needed
-
+        private fun setUrlExtractor(extractor: DataSourceUrlExtractor) {
+            if (!::extractor.isInitialized) {
                 this.extractor = extractor
-
+            }
         }
 
         fun from(dataSource: LocalDataSource): DataSourceUrl? = from(dataSource.url)
