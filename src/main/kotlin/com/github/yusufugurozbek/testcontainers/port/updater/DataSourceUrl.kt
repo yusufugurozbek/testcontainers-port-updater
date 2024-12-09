@@ -5,14 +5,23 @@ import com.github.yusufugurozbek.testcontainers.port.updater.settings.MatchMode.
 import com.intellij.database.dataSource.LocalDataSource
 import com.intellij.database.util.common.isNotNullOrEmpty
 
-data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?, val urlExtractor : DataSourceUrlExtractor = DataSourceUrlExtractor()) {
+data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?, private val urlExtractor : DataSourceUrlExtractor) {
+
+    constructor(beforePort: String, port: String, afterPort: String?) : this(beforePort, port, afterPort, DataSourceUrlExtractor())
 
     init {
-        extractor = urlExtractor
+        setUrlExtractor(urlExtractor)
     }
 
     companion object {
-        lateinit var extractor: DataSourceUrlExtractor
+        private var extractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
+
+        fun setUrlExtractor(extractor: DataSourceUrlExtractor) {
+            // Initialize extractor when first needed
+
+                this.extractor = extractor
+
+        }
 
         fun from(dataSource: LocalDataSource): DataSourceUrl? = from(dataSource.url)
 
@@ -46,6 +55,19 @@ data class DataSourceUrl(val beforePort: String, val port: String, val afterPort
 
     private fun equalsIgnoringPort(other: DataSourceUrl): Boolean =
         (this.beforePort == other.beforePort) and (this.afterPort == other.afterPort)
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is DataSourceUrl) return false
+
+        return beforePort == other.beforePort &&
+                port == other.port &&
+                afterPort == other.afterPort
+    }
+
+    override fun hashCode(): Int {
+        return 31 * beforePort.hashCode() + port.hashCode() + (afterPort?.hashCode() ?: 0)
+    }
 
     override fun toString(): String = "$beforePort:$port$afterPort"
 }
