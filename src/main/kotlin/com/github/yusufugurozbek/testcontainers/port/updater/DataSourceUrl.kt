@@ -5,17 +5,20 @@ import com.github.yusufugurozbek.testcontainers.port.updater.settings.MatchMode.
 import com.intellij.database.dataSource.LocalDataSource
 import com.intellij.database.util.common.isNotNullOrEmpty
 
-data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?) {
+data class DataSourceUrl(val beforePort: String, val port: String, val afterPort: String?, val urlExtractor : DataSourceUrlExtractor = DataSourceUrlExtractor()) {
 
+    init {
+        extractor = urlExtractor
+    }
 
     companion object {
-        private var dataSourceUrlExtractor: DataSourceUrlExtractor = DataSourceUrlExtractor()
+        lateinit var extractor: DataSourceUrlExtractor
 
         fun from(dataSource: LocalDataSource): DataSourceUrl? = from(dataSource.url)
 
         fun from(url: String?): DataSourceUrl? {
             return url?.takeIf { it.isNotNullOrEmpty }
-                ?.let { dataSourceUrlExtractor.extract(it)?.let(::toDataSourceUrl) }
+                ?.let { extractor.extract(it)?.let(::toDataSourceUrl) }
         }
 
         private fun toDataSourceUrl(matchResult: MatchResult?): DataSourceUrl? {
