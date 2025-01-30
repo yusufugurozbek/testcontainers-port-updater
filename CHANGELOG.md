@@ -4,6 +4,7 @@
 - Bump dependencies to their latest versions
 - Support latest IntelliJ 2025.1.*
 - Bump Java version to 21
+- Bump Gradle version to 8.12.1
 
 ## [1.1.6] - 2024-11-19
 
