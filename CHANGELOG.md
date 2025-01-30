@@ -1,6 +1,9 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Support latest IntelliJ 2025.1.*
+- Bump Java version to 21
 
 ## [1.1.6] - 2024-11-19
 
