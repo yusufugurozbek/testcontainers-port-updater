@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 - Bump dependencies to their latest versions
+- Migrate latest changes of intellij-platform-plugin-template v2.1.0
+- Support latest IntelliJ 2025.2.*
+- Bump Gradle version to 8.14
+
+## [1.1.7] - 2025-01-31
+
+- Bump dependencies to their latest versions
 - Support latest IntelliJ 2025.1.*
 - Bump Java version to 21
 - Bump Gradle version to 8.12.1
@@ -149,7 +156,8 @@
 
 - Create the plugin
 
-[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.6...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.7...HEAD
+[1.1.7]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.6...v1.1.7
 [1.1.6]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.4...v1.1.5
 [1.1.4]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.3...v1.1.4
