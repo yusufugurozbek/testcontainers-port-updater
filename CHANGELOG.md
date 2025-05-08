@@ -1,6 +1,10 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+- Bump dependencies to their latest versions
+- Migrate latest changes of intellij-platform-plugin-template v2.1.0
+- Support latest IntelliJ 2025.2.*
+- Bump Gradle version to 8.14
 
 ## [1.1.7] - 2025-01-31
 
