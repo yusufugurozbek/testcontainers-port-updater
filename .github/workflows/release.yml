@@ -51,9 +51,9 @@ jobs:
           CHANGELOG: ${{ github.event.release.body }}
         run: |
           RELEASE_NOTE="./build/tmp/release_note.txt"
+          mkdir -p "$(dirname "$RELEASE_NOTE")"
           echo "$CHANGELOG" > $RELEASE_NOTE
 
-          ${{ github.event.release.body }}
           ./gradlew patchChangelog --release-note-file=$RELEASE_NOTE
 
       # Publish the plugin to JetBrains Marketplace
@@ -73,7 +73,7 @@ jobs:
 
       # Create a pull request
       - name: Create Pull Request
-        if: ${{ steps.properties.outputs.changelog != '' }}
+        if: ${{ github.event.release.body != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -87,7 +87,7 @@ jobs:
           git checkout -b $BRANCH
           git commit -am "Changelog update - $VERSION"
           git push --set-upstream origin $BRANCH
-          
+
           gh label create "$LABEL" \
             --description "Pull requests with release changelog update" \
             --force \
