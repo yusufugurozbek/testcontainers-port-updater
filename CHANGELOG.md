@@ -1,6 +1,14 @@
 # Testcontainers Port Updater Changelog
 
 ## [Unreleased]
+
+- Bump dependencies to their latest versions
+- Migrate latest changes of intellij-platform-plugin-template v2.4.0
+- Support latest IntelliJ 2025.3.*
+- Bump Gradle version to 9.2.1
+
+## [1.1.8] - 2025-05-08
+
 - Bump dependencies to their latest versions
 - Migrate latest changes of intellij-platform-plugin-template v2.1.0
 - Support latest IntelliJ 2025.2.*
@@ -156,7 +164,8 @@
 
 - Create the plugin
 
-[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.7...HEAD
+[Unreleased]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.8...HEAD
+[1.1.8]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.7...v1.1.8
 [1.1.7]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.6...v1.1.7
 [1.1.6]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.5...v1.1.6
 [1.1.5]: https://github.com/yusufugurozbek/testcontainers-port-updater/compare/v1.1.4...v1.1.5
